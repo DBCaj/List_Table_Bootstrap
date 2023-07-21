@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
     {
       $faker = Faker::create();
       
-      $role = ['user', 'admin'];
-      shuffle($role);
-      
       foreach(range(1, 15) as $index) {
+        $role = ['user', 'admin'];
+        shuffle($role);
+        
         User::create([
           'name' => $faker->name,
           'email' => $faker->email,
@@ -26,15 +26,5 @@ class DatabaseSeeder extends Seeder
           'role' => $role[0],
           ]);
       }
-      
-      
-      // foreach(range(1, 15) as $index) {
-      //   DB::table('users')->insert([
-      //     'name' => $faker->name,
-      //     'email' => $faker->email,
-      //     'password' => Hash::make(Str::random(length:15)),
-      //     'role' => $role[0],
-      //     ]);
-      // }
     }
 }
