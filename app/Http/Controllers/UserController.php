@@ -7,9 +7,9 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function list()
-    {
-      $users = User::all();
-      return view('components.list-table', compact('users'));
-    }
+  public function index()
+  {
+    $users = User::all();
+    return view('components.list-table', compact('users'));
+  }
 }
